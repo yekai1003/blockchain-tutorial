@@ -69,7 +69,7 @@ password: Unlocked: mywallet
 导入钱包
 
 ```sh
-[fabric@jbf138 ~]$ cleos wallet import -n mywallet --private-key 5JzNrQGtHUca4gnEhcHwadRATw3J4EC6C128wGfPXmpC6z84Has
+cleos wallet import -n mywallet --private-key 5JzNrQGtHUca4gnEhcHwadRATw3J4EC6C128wGfPXmpC6z84Has
 imported private key for: EOS6YgpmsRKoRPj33AwPH8btbBqumVCHZnDQBkgqXKDC77RqRH17b
 ```
 
@@ -251,4 +251,16 @@ LCV的目标是生成相对轻量级的存在证明，跟踪相对轻量级数�
 - RAM - This resource is the amount of RAM available to an account. RAM stores smart contracts loaded on the blockchain. Smart contacts use RAM via the multi-index table to store smart contract state. Spend tokens to purchase more RAM, RAM can be sold.
 - CPU - This resource is the amount of CPU which can be used by an account in each 24 hour period. Transactions consume CPU. Stake tokens for more CPU. Unstaking returns CPU.
 - NET - This resource is the amount of data which can be written to blockchain blocks by an account in each 24 hour period. The blockchain blocks store transactions and transaction parameters, the history of blockchain . Stake tokens for more NET. Unstaking returns NET.
+
+
+
+
+
+EOS的合约调用
+
+```sh
+
+```
+
+![image-20211126115005481](C:\Users\95762\AppData\Roaming\Typora\typora-user-images\image-20211126115005481.png)
 

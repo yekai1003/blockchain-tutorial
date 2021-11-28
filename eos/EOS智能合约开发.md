@@ -10,6 +10,36 @@
 
 
 
+### 1. C++编译和运行
+
+第1个程序
+
+```c++
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    cout<<"hello world"<<endl;
+    auto ax = 100;
+    cout<<"ax = "<<ax<<endl;
+    return 0;
+}
+```
+
+编译合约
+
+```sh
+g++ hello.cpp -o hello
+```
+
+
+
+
+
+
+
 合约相关的API：
 
 ```sh

@@ -222,14 +222,14 @@ db.test.find().pretty()
 db.test.findone()
 ```
 
-| ***\*操作\**** | ***\*格式\****         | ***\*范例\****                             | ***\*RDBMS中的类似语句\**** |
-| -------------- | ---------------------- | ------------------------------------------ | --------------------------- |
-| 等于           | {<key>:<value>}        | db.test.find({"title":"mongo"}).pretty()   | where title = 'mongo'       |
-| 小于           | {<key>:{$lt:<value>}}  | db.test.find({"likes":{$lt:50}}).pretty()  | where likes < 50            |
-| 小于或等于     | {<key>:{$lte:<value>}} | db.test.find({"likes":{$lte:50}}).pretty() | where likes <= 50           |
-| 大于           | {<key>:{$gt:<value>}}  | db.test.find({"likes":{$gt:50}}).pretty()  | where likes > 50            |
-| 大于或等于     | {<key>:{$gte:<value>}} | db.test.find({"likes":{$gte:50}}).pretty() | where likes >= 50           |
-| 不等于         | {<key>:{$ne:<value>}}  | db.test.find({"likes":{$ne:50}}).pretty()  | where likes != 50           |
+| ***操作*** | ***格式***             | ***范例***                                | ***RDBMS中的类似语句*** |
+| ---------- | ---------------------- | ----------------------------------------- | ----------------------- |
+| 等于       | {<key>:<value>}        | db.test.find({"title":"mongo"}).pretty()  | where title = 'mongo'   |
+| 小于       | {<key>:{$lt:<value>}}  | db.test.find({"likes":{$lt:50}}).pretty() | where likes < 50        |
+| 小于或等于 | {<key>:{$lte:<value>}} | db.test.find({"age":{$lte:50}}).pretty()  | where likes <= 50       |
+| 大于       | {<key>:{$gt:<value>}}  | db.test.find({"age":{$gt:50}}).pretty()   | where likes > 50        |
+| 大于或等于 | {<key>:{$gte:<value>}} | db.test.find({"age":{$gte:50}}).pretty()  | where likes >= 50       |
+| 不等于     | {<key>:{$ne:<value>}}  | db.test.find({"age":{$ne:50}}).pretty()   | where likes != 50       |
 
 - 删除文档
 
@@ -411,6 +411,46 @@ db.COLLECTION_NAME.aggregate(AGGREGATE_OPERATION)
 
 参考教程：https://blog.csdn.net/iBenxiaohai123/article/details/85135312
 
+***数据准备***
+
+```js
+db.city.insert({name:"Bernardo Silva",age:27,cm:173,kg:64,apps:11,mins:940,data:[4,1],rating:7.45})
+db.city.insert({name:"Ilkay Gündogan",age:31,cm:180,kg:80,apps:8,mins:684,data:[2],rating:7.41})
+db.city.insert({name:"João Cancelo",age:27,cm:182,kg:74,apps:12,mins:1068,data:[0,3],rating:7.40})
+db.city.insert({name:"Rodri",age:25,cm:191,kg:82,apps:10,mins:900,data:[2],rating:7.40})
+db.city.insert({name:"Jack Grealish",age:26,cm:175,kg:68,apps:9,mins:743,data:[1,2],rating:7.32})
+db.city.insert({name:"Gabriel Jesus",age:24,cm:175,kg:73,apps:9,mins:769,data:[2,5],rating:7.26})
+db.city.insert({name:"Ferran Torres",age:21,cm:184,kg:77,apps:4,mins:305,data:[2,1],rating:7.23})
+db.city.insert({name:"Zack Steffen",age:26,cm:191,kg:86,apps:1,mins:90,data:[],rating:7.16})
+db.city.insert({name:"Phil Foden",age:21,cm:171,kg:70,apps:7,mins:613,data:[3,1],rating:7.09})
+db.city.insert({name:"John Stones",age:27,cm:188,kg:70,apps:3,mins:301,data:[0],rating:7.03})
+db.city.insert({name:"Rúben Dias",age:24,cm:186,kg:76,apps:10,mins:918,data:[0,1],rating:6.95})
+db.city.insert({name:"Kevin De Bruyne",age:30,cm:181,kg:68,apps:5,mins:453,data:[2,0],rating:6.93})
+
+
+db.city.insert({name:"Kyle Walker",age:31,cm:180,kg:80,apps:10,mins:856,data:[],rating:6.80})
+db.city.insert({name:"Riyad Mahrez",age:30,cm:179,kg:67,apps:2,mins:293,data:[2,1],rating:6.69})
+db.city.insert({name:"Nathan Aké",age:26,cm:180,kg:75,apps:3,mins:284,data:[],rating:6.66})
+db.city.insert({name:"Ederson",age:28,cm:186,kg:86,apps:11,mins:990,data:[],rating:6.66})
+db.city.insert({name:"Aymeric Laporte",age:27,cm:191,kg:86,apps:9,mins:735,data:[1],rating:6.65})
+
+
+db.city.insert({name:"Benjamin Mendy",age:27,cm:185,kg:85,apps:1,mins:79,data:[2],rating:6.60})
+db.city.insert({name:"Raheem Sterling",age:26,cm:170,kg:69,apps:4,mins:466,data:[2],rating:6.60})
+db.city.insert({name:"Cole Palmer",age:20,cm:190,kg:60,apps:1,mins:109,data:[],rating:6.54})
+db.city.insert({name:"Oleksandr Zinchenko",age:24,cm:175,kg:64,apps:1,mins:56,data:[0],rating:6.37})
+db.city.insert({name:"Fernandinho",age:36,cm:179,kg:67,apps:2,mins:186,data:[],rating:6.30})
+db.city.insert({name:"James McAtee",age:19,cm:174,kg:62,apps:1,mins:3,data:[0],rating:6.17})
+
+
+```
+
+
+
+
+
+
+
 ```sh
 db.users.find( { age: {$gt:30} } );
 db.users.find( { $where: "this.age > 30" } );
@@ -419,7 +459,9 @@ db.users.find( { $where: "this.age > 30" } );
 也可以使用函数
 
 ```sh
-f = function() { return this.age > 20; }; db.users.find(f);
+f = function() { return this.age > 20; }; db.city.find(f);
+
+f22 = function() { return this.age > 20 && this.age < 30; }; db.users.find(f22);
 ```
 
 正则表达式使用
@@ -448,7 +490,7 @@ db.users.find({name: {$regex: /^f.*/}});
 
 ```sh
 mkdir -p /data/node1
-mkdir -p /data/node1
+mkdir -p /data/node2
 mkdir -p /data/arbiter
 ```
 
