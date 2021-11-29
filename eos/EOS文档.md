@@ -7,7 +7,7 @@ https://developers.eos.io/manuals/eos/latest/nodeos/index
 nodeos节点启动
 
 ```sh
- nohup nodeos -e -p eosio --plugin eosio::chain_plugin --plugin eosio::chain_api_plugin --plugin eosio::history_api_plugin --http-server-address "0.0.0.0:8888" --hard-replay-blockchain --replay-blockchain --contracts-console  >> eos.log &
+ nohup nodeos -e -p eosio --plugin eosio::chain_plugin --plugin eosio::chain_api_plugin --plugin eosio::history_api_plugin --http-server-address "0.0.0.0:8888" --hard-replay-blockchain --replay-blockchain --contracts-console --verbose-http-errors  > eos.log &
 ```
 
 查看区块信息
