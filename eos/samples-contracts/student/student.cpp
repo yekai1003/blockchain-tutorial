@@ -19,3 +19,17 @@ void student::get(uint64_t sid)
     print("sid = ", itr->sid, ",sname = ", itr->sname, ", sage = ", itr->sage);
 }
 
+
+uint8_t student::getage(uint64_t sid)
+{
+    pernsons ps(get_self(), "yekai"_n.value);
+    auto itr = ps.find(sid);
+    return itr->sage;
+}
+string student::getname(uint64_t sid)
+{
+    pernsons ps(get_self(), "yekai"_n.value);
+    auto itr = ps.find(sid);
+    return itr->sname;
+}
+

@@ -13,7 +13,13 @@ import (
 	eos "github.com/eoscanada/eos-go"
 )
 
-func main() {
+type AddData struct {
+	Sid   uint64 `json:"sid"`
+	Sname string `json:"sname"`
+	Sage  uint8  `json:"sage"`
+}
+
+func main1() {
 	api := eos.New("http://192.168.137.129:8888")
 	ctx := context.Background()
 
@@ -30,11 +36,12 @@ func main() {
 	fmt.Println("\n\n\n\n\n\n")
 
 	//jsondata := `"sid":11,"sname":"zhaoliu","sage":33}`
-	jsondata := `[13,"zhaokk",33]`
-	actData := eos.NewActionDataFromHexData([]byte(jsondata))
+	//jsondata := `[13,"zhaokk",33]`
+	data := AddData{14, "zhaokk4", 35}
+	actData := eos.NewActionData(data)
 	//actData.HexData = []byte(jsondata)
 	level := eos.PermissionLevel{
-		Actor:      "yekai",
+		Actor:      eos.AN("yekai"),
 		Permission: eos.PN("active"),
 	}
 	act := eos.Action{
@@ -101,6 +108,77 @@ func main() {
 		log.Panic("failed to Call ", err)
 	}
 	//fmt.Printf("Transaction [%s] submitted to the network succesfully.\n", hex.EncodeToString(response.Processed.ID))
+}
+
+type GetData struct {
+	Sid uint64 `json:"sid"`
+}
+
+func main() {
+	api := eos.New("http://192.168.137.129:8888")
+	//ctx := context.Background()
+
+	data := GetData{14}
+	actData := eos.NewActionData(data)
+	//actData.HexData = []byte(jsondata)
+	level := eos.PermissionLevel{
+		Actor:      eos.AN("yekai"),
+		Permission: eos.PN("active"),
+	}
+	act := eos.Action{
+		Account:       eos.AN("student"),
+		Name:          eos.ActN("get"),
+		Authorization: []eos.PermissionLevel{level},
+		ActionData:    actData,
+	}
+	keyBag := &eos.KeyBag{}
+	keyBag.ImportPrivateKey(context.Background(), "5KMLqUbbD5ehkbvBgZetU2wixenrzmEBhYKVWevsM7Ee7gRNzud")
+
+	api.SetSigner(keyBag)
+
+	txOpts := &eos.TxOptions{}
+	if err := txOpts.FillFromChain(context.Background(), api); err != nil {
+		panic(fmt.Errorf("filling tx opts: %w", err))
+	}
+
+	response, err := api.SignPushActionsWithOpts(context.Background(), []*eos.Action{&act}, txOpts)
+	if err != nil {
+		log.Panic("failed tp SignPushActionsWithOpts ", err)
+	}
+	fmt.Printf("-------------%+v\n", response)
+
+	// -------- 查询table数据
+
+	// params := eos.GetTableByScopeRequest{}
+	// params.Code = "student"
+	// params.Table = "persons"
+	// params.LowerBound = ""
+	// params.UpperBound = ""
+	// params.Limit = 20
+	// resprows, err := api.GetTableByScope(context.Background(), params)
+	// if err != nil {
+	// 	log.Panic("failed to GetTableByScope ", err)
+	// }
+
+	// fmt.Printf("%+v\n", resprows)
+	params := eos.GetTableRowsRequest{}
+	params.Code = "student"
+	params.Table = "persons"
+	params.Scope = "yekai"
+	params.JSON = true
+	params.LowerBound = "1"
+	params.UpperBound = "20"
+
+	resprows, err := api.GetTableRows(context.Background(), params)
+	if err != nil {
+		log.Panic("failed to GetTableRows ", err)
+	}
+	fmt.Printf("getrows:%+s\n", resprows.Rows)
+
+	//api.GetABI()
+
+	return
+
 }
 
 func toJson(v interface{}) string {

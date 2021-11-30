@@ -25,6 +25,10 @@ class[[eosio::contract("student")]] student : public contract
         void add(uint64_t sid, string sname, uint8_t sage);
         [[eosio::action]]
         void get(uint64_t sid);
+        [[eosio::action]]
+        uint8_t getage(uint64_t sid);
+        [[eosio::action]]
+        string getname(uint64_t sid);
 
     private:
 

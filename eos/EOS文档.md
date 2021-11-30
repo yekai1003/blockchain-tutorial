@@ -7,7 +7,7 @@ https://developers.eos.io/manuals/eos/latest/nodeos/index
 nodeos节点启动
 
 ```sh
- nohup nodeos -e -p eosio --plugin eosio::chain_plugin --plugin eosio::chain_api_plugin --plugin eosio::history_api_plugin --http-server-address "0.0.0.0:8888" --hard-replay-blockchain --replay-blockchain --contracts-console --verbose-http-errors  > eos.log &
+nohup nodeos -e -p eosio --plugin eosio::chain_plugin --plugin eosio::producer_api_plugin --plugin eosio::chain_api_plugin --plugin eosio::history_api_plugin --http-server-address "0.0.0.0:8888" --contracts-console --verbose-http-errors --hard-replay-blockchain --replay-blockchain  > eos.log &
 ```
 
 查看区块信息
@@ -263,4 +263,20 @@ EOS的合约调用
 ```
 
 ![image-20211126115005481](C:\Users\95762\AppData\Roaming\Typora\typora-user-images\image-20211126115005481.png)
+
+
+
+开启return_value
+
+```sh
+curl --request POST \
+    --url http://127.0.0.1:8888/v1/producer/schedule_protocol_feature_activations \
+    -d '{"protocol_features_to_activate": ["0ec7e080177b2c02b278d5088611686b49d739925a92d9bfcacd7fc6b74053bd"]}'
+```
+
+
+
+```sh
+cleos set contract eosio eosio.boot/bin/ eosio.boot.wasm eosio.boot.abi
+```
 
