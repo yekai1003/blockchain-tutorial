@@ -280,3 +280,7 @@ curl --request POST \
 cleos set contract eosio eosio.boot/bin/ eosio.boot.wasm eosio.boot.abi
 ```
 
+
+
+git config --global http.sslVerify "false"
+

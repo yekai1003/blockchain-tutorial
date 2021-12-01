@@ -1,0 +1,117 @@
+{
+    "____comment": "This file was generated with eosio-abigen. DO NOT EDIT ",
+    "version": "eosio::abi/1.2",
+    "types": [],
+    "structs": [
+        {
+            "name": "add",
+            "base": "",
+            "fields": [
+                {
+                    "name": "sid",
+                    "type": "uint64"
+                },
+                {
+                    "name": "sname",
+                    "type": "string"
+                },
+                {
+                    "name": "sage",
+                    "type": "uint8"
+                }
+            ]
+        },
+        {
+            "name": "get",
+            "base": "",
+            "fields": [
+                {
+                    "name": "sid",
+                    "type": "uint64"
+                }
+            ]
+        },
+        {
+            "name": "getage",
+            "base": "",
+            "fields": [
+                {
+                    "name": "sid",
+                    "type": "uint64"
+                }
+            ]
+        },
+        {
+            "name": "getname",
+            "base": "",
+            "fields": [
+                {
+                    "name": "sid",
+                    "type": "uint64"
+                }
+            ]
+        },
+        {
+            "name": "person",
+            "base": "",
+            "fields": [
+                {
+                    "name": "sid",
+                    "type": "uint64"
+                },
+                {
+                    "name": "sname",
+                    "type": "string"
+                },
+                {
+                    "name": "sage",
+                    "type": "uint8"
+                }
+            ]
+        }
+    ],
+    "actions": [
+        {
+            "name": "add",
+            "type": "add",
+            "ricardian_contract": ""
+        },
+        {
+            "name": "get",
+            "type": "get",
+            "ricardian_contract": ""
+        },
+        {
+            "name": "getage",
+            "type": "getage",
+            "ricardian_contract": ""
+        },
+        {
+            "name": "getname",
+            "type": "getname",
+            "ricardian_contract": ""
+        }
+    ],
+    "tables": [
+        {
+            "name": "persons",
+            "type": "person",
+            "index_type": "i64",
+            "key_names": [],
+            "key_types": []
+        }
+    ],
+    "kv_tables": {},
+    "ricardian_clauses": [],
+    "variants": [],
+    "action_results": [
+        {
+            "name": "getage",
+            "result_type": "uint8"
+        },
+        {
+            "name": "getname",
+            "result_type": "string"
+        }
+    ]
+}

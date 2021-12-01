@@ -10,7 +10,7 @@ import (
 	"net/http"
 	"net/http/httputil"
 
-	eos "github.com/eoscanada/eos-go"
+	eos "github.com/yekai1003/eos-go"
 )
 
 type AddData struct {
@@ -114,8 +114,8 @@ type GetData struct {
 	Sid uint64 `json:"sid"`
 }
 
-func main() {
-	api := eos.New("http://192.168.137.129:8888")
+func main2() {
+	api := eos.New("http://127.0.0.1:8888")
 	//ctx := context.Background()
 
 	data := GetData{14}
@@ -132,7 +132,7 @@ func main() {
 		ActionData:    actData,
 	}
 	keyBag := &eos.KeyBag{}
-	keyBag.ImportPrivateKey(context.Background(), "5KMLqUbbD5ehkbvBgZetU2wixenrzmEBhYKVWevsM7Ee7gRNzud")
+	keyBag.ImportPrivateKey(context.Background(), "5J6rPCaPrtViyqKvWKAAgcRE4msK4TptM83tzcDQ4NuzTpQhWtm")
 
 	api.SetSigner(keyBag)
 
@@ -177,6 +177,50 @@ func main() {
 
 	//api.GetABI()
 
+	return
+
+}
+
+func main() {
+	api := eos.New("http://127.0.0.1:8888")
+	//ctx := context.Background()
+
+	data := GetData{1}
+	api.Debug = true
+	actData := eos.NewActionData(data)
+	//actData.HexData = []byte(jsondata)
+	level := eos.PermissionLevel{
+		Actor:      eos.AN("yekai"),
+		Permission: eos.PN("active"),
+	}
+	act := eos.Action{
+		Account:       eos.AN("student"),
+		Name:          eos.ActN("getname"),
+		Authorization: []eos.PermissionLevel{level},
+		ActionData:    actData,
+	}
+	keyBag := &eos.KeyBag{}
+	keyBag.ImportPrivateKey(context.Background(), "5J6rPCaPrtViyqKvWKAAgcRE4msK4TptM83tzcDQ4NuzTpQhWtm")
+
+	api.SetSigner(keyBag)
+
+	txOpts := &eos.TxOptions{}
+	if err := txOpts.FillFromChain(context.Background(), api); err != nil {
+		panic(fmt.Errorf("filling tx opts: %w", err))
+	}
+
+	response, err := api.SignPushActionsWithOpts(context.Background(), []*eos.Action{&act}, txOpts)
+	if err != nil {
+		log.Panic("failed tp SignPushActionsWithOpts ", err)
+	}
+	fmt.Printf("-------------%+v\n", response)
+
+	// // 查询交易
+	// txresp, err := api.GetTransaction(context.Background(), "a0daac215683ba92203e98bdcc60b4e01a8f0f18eb5e50e89a79253037b00704")
+	// if err != nil {
+	// 	log.Panic("failed to GetTransaction ", err)
+	// }
+	// fmt.Printf("%+v\n", txresp)
 	return
 
 }
