@@ -17,7 +17,7 @@ int main()
     Person p ;
     p.init("yekai", 30);
     cout<<p.name<<":"<<p.age<<endl;
-    [=] () mutable  { p.name = "zhangsan";  }(); 
+    [&] () mutable  { p.name = "zhangsan";  }(); 
     
     cout<<p.name<<":"<<p.age<<endl;
     return 0;
