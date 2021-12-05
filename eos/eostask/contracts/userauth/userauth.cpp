@@ -1,6 +1,6 @@
 #include "userauth.hpp"
 
-void userauth::register(name admin, name sname, string password) 
+void userauth::userreg(name admin, name sname, string password) 
 {
    users us(get_self(), admin.value);
    auto itr = us.find(sname.value);

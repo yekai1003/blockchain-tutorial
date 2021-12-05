@@ -43,7 +43,7 @@ func main1() {
 
 	//3. 私钥导入
 	keyBag := &eos.KeyBag{}
-	keyBag.ImportPrivateKey(context.Background(), "5KMLqUbbD5ehkbvBgZetU2wixenrzmEBhYKVWevsM7Ee7gRNzud")
+	keyBag.ImportPrivateKey(context.Background(), "5HsGoQTADsykXysTEwUq8RrurYtrqpgLnWunoCQDHoWWsBf1DX5")
 	if err != nil {
 		log.Panic("failed to ListKeys ", err)
 	}

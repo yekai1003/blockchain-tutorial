@@ -7,7 +7,7 @@ class[[eosio::contract("userauth")]] userauth : public contract
 {
     public:
         using contract::contract;
-        userauth(name receiver, name code, datastream<const char *> ds) : contract(receiver, code, ds) {beginid = 1;}
+        userauth(name receiver, name code, datastream<const char *> ds) : contract(receiver, code, ds) {}
 
         struct [[eosio::table]] userinfo
         {
@@ -21,7 +21,7 @@ class[[eosio::contract("userauth")]] userauth : public contract
         typedef eosio::multi_index<"users"_n, userinfo> users;
 
         [[eosio::action]]
-        void register(name admin, name sname, string password);
+        void userreg(name admin, name sname, string password);
         [[eosio::action]]
         bool login(name admin, name sname, string password);
 
