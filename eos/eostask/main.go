@@ -20,57 +20,43 @@ type AddData struct {
 }
 
 func main1() {
-	api := eos.New("http://192.168.137.129:8888")
+	// 1. 连接到节点
+	api := eos.New("http://127.0.0.1:8888")
 	ctx := context.Background()
 
-	infoResp, err := api.GetInfo(ctx)
-	//clii.NoError(err, "unable to get chain info")
-	if err != nil {
-		log.Panic("Failed to GetInfo", err)
-	}
-
-	fmt.Println("Chain Info", toJson(infoResp))
-
-	accountResp, _ := api.GetAccount(ctx, "yekai")
-	fmt.Println("Account Info", toJson(accountResp))
-	fmt.Println("\n\n\n\n\n\n")
-
-	//jsondata := `"sid":11,"sname":"zhaoliu","sage":33}`
-	//jsondata := `[13,"zhaokk",33]`
+	// 构建Action数据
 	data := AddData{14, "zhaokk4", 35}
 	actData := eos.NewActionData(data)
-	//actData.HexData = []byte(jsondata)
+
+	// 构建调用权限级别
 	level := eos.PermissionLevel{
 		Actor:      eos.AN("yekai"),
 		Permission: eos.PN("active"),
 	}
+	// 2. 创建action
 	act := eos.Action{
 		Account:       eos.AN("student"),
 		Name:          eos.ActN("add"),
 		Authorization: []eos.PermissionLevel{level},
 		ActionData:    actData,
 	}
+
+	//3. 私钥导入
 	keyBag := &eos.KeyBag{}
 	keyBag.ImportPrivateKey(context.Background(), "5KMLqUbbD5ehkbvBgZetU2wixenrzmEBhYKVWevsM7Ee7gRNzud")
 	if err != nil {
 		log.Panic("failed to ListKeys ", err)
 	}
-	// out, err := api.NetConnect(context.Background(), "http://192.168.137.138:8888")
-	// if err != nil {
-	// 	log.Panic("failed to Netconnect ", err)
-	// }
-	//fmt.Printf("%+v\n", out)
-	//signer := eos.NewWalletSigner(api, "default")
+
 	api.SetSigner(keyBag)
-	// err = api.WalletImportKey(context.Background(), "default", "5KMLqUbbD5ehkbvBgZetU2wixenrzmEBhYKVWevsM7Ee7gRNzud")
-	// if err != nil {
-	// 	log.Panic("failed to ImportPrivateKey ", err)
-	// }
+
+	//4. 填写交易附选项
 	txOpts := &eos.TxOptions{}
 	if err := txOpts.FillFromChain(context.Background(), api); err != nil {
 		panic(fmt.Errorf("filling tx opts: %w", err))
 	}
 
+	//5. 创建交易
 	tx := eos.NewTransaction([]*eos.Action{&act}, txOpts)
 
 	response, err := api.SignPushActionsWithOpts(context.Background(), []*eos.Action{&act}, txOpts)
@@ -79,35 +65,6 @@ func main1() {
 	}
 	fmt.Printf("-------------%+v\n", response)
 	return
-
-	signedTx, packedTx, err := api.SignTransaction(context.Background(), tx, txOpts.ChainID, eos.CompressionNone)
-	if err != nil {
-		panic(fmt.Errorf("sign transaction: %w", err))
-	}
-	content, err := json.MarshalIndent(signedTx, "", "  ")
-	if err != nil {
-		panic(fmt.Errorf("json marshalling transaction: %w", err))
-	}
-
-	fmt.Println(string(content))
-	fmt.Println()
-	// resp, err := api.SignPushActions(context.Background(), &act)
-	// if err != nil {
-	// 	log.Panic("faield to signpushaction --- ", err)
-	// }
-	// fmt.Printf("%+v\n", packedTx)
-	// response, err := api.SendTransaction(context.Background(), packedTx)
-	// //response, err := api.PushTransaction(context.Background(), packedTx)
-	// if err != nil {
-	// 	fmt.Printf("%+v\n", response)
-	// 	panic(fmt.Errorf("push transaction: %w", err))
-	// }
-	//var out eos.PushTransactionFullResp
-	err = Call(api, context.Background(), "chain", "push_action", packedTx)
-	if err != nil {
-		log.Panic("failed to Call ", err)
-	}
-	//fmt.Printf("Transaction [%s] submitted to the network succesfully.\n", hex.EncodeToString(response.Processed.ID))
 }
 
 type GetData struct {
