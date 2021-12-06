@@ -284,3 +284,44 @@ cleos set contract eosio eosio.boot/bin/ eosio.boot.wasm eosio.boot.abi
 
 git config --global http.sslVerify "false"
 
+
+
+### yktoken
+
+
+
+```sh
+cleos push action yktoken ykcreate '["admin","ykc"]' -padmin
+
+cleos get table yktoken admin supplys
+cleos push action yktoken ykissue '["admin","ykc",10000]' -padmin
+
+cleos get table yktoken ykc balances
+
+cleos push action yktoken ykbalanceof '["admin","ykc","ykc"]' -padmin
+cleos push action yktoken yktransfer '["admin","ykc","ykc","yekai",500]' -padmin
+
+```
+
+
+
+### yktask
+
+
+
+```sh
+cleos push action yktask issuetask '["admin","yekai", "do-sth",200]' -padmin
+cleos push action yktask taketask '["admin",0, "alice"]' -padmin
+cleos push action yktask committask '["admin",0, "alice"]' -padmin
+cleos push action yktask confirmtask '["admin",0, "yekai",3,"well done"]' -padmin
+
+
+cleos push action yktask issuetask '["yekai","yekai", "do-sth",200]' -pyekai
+cleos push action yktask taketask '["yekai",1, "alice"]' -pyekai
+cleos push action yktask committask '["yekai",1, "alice"]' -pyekai
+cleos push action yktask confirmtask '["yekai",1, "yekai",3,"well done"]' -pyekai
+```
+
+```swift
+cleos set account permission yekai active --add-code
+```
