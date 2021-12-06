@@ -1,7 +1,7 @@
 package main
 
 import (
-	"tokentask/routes"
+	"eostask/routes"
 
 	"github.com/gin-gonic/gin"
 	"github.com/go-session/gin-session"

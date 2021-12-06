@@ -1,14 +1,15 @@
 package routes
 
 import (
+	"eostask/eosgo"
+	_ "eostask/eosgo"
 	"fmt"
 	"log"
 	"net/http"
 	"strconv"
-	"tokentask/bcos"
 
 	"github.com/gin-gonic/gin"
-	"github.com/go-session/gin-session"
+	_ "github.com/go-session/gin-session"
 )
 
 // 通用化响应消息格式
@@ -64,11 +65,11 @@ func Register(c *gin.Context) {
 	}
 	fmt.Printf("Register:%+v\n", ui)
 	//3. 调用区块链合约
-	err = bcos.Register(ui.UserName, ui.Passwd)
-	if err != nil {
-		resp.Code = RESPCODE_BLKERR
-		log.Panic("failed to bcos.Register", err)
-	}
+	// err = bcos.Register(ui.UserName, ui.Passwd)
+	// if err != nil {
+	// 	resp.Code = RESPCODE_BLKERR
+	// 	log.Panic("failed to bcos.Register", err)
+	// }
 }
 
 //curl  -H "Content-type: application/json" -X POST -d '{"username":"yekai","password":"123"}' "http://localhost:9090/login"
@@ -89,28 +90,33 @@ func Login(c *gin.Context) {
 		log.Panic("failed to ShouldBind", err)
 	}
 	fmt.Printf("Login:%+v\n", ui)
-	//3. 调用区块链合约
-	ok, err := bcos.Login(ui.UserName, ui.Passwd)
-	if err != nil {
-		resp.Code = RESPCODE_BLKERR
-		log.Panic("failed to bcos.Login", err)
-	}
-	if !ok {
-		resp.Code = RESPCODE_LOGINERR
-		fmt.Println("User or password err")
-	}
 
-	//4. session记录
-	store := ginsession.FromContext(c)
-	store.Set("username", ui.UserName)
-	store.Set("password", ui.Passwd)
-	err = store.Save()
-	if err != nil {
-		//c.AbortWithError(500, err)
-		resp.Code = RESPCODE_UNKNOWN
-		fmt.Println("session err", err)
-		return
-	}
+	//3. 调用区块链合约
+	eosgo.Login(ui.UserName, ui.Passwd)
+	// ok, err := bcos.Login(ui.UserName, ui.Passwd)
+	// if err != nil {
+	// 	resp.Code = RESPCODE_BLKERR
+	// 	log.Panic("failed to bcos.Login", err)
+	// }
+	// if !ok {
+	// 	resp.Code = RESPCODE_LOGINERR
+	// 	fmt.Println("User or password err")
+	// }
+
+	// //4. session记录
+	// store := ginsession.FromContext(c)
+	// store.Set("username", ui.UserName)
+	// store.Set("password", ui.Passwd)
+	// err = store.Save()
+	// if err != nil {
+	// 	//c.AbortWithError(500, err)
+	// 	resp.Code = RESPCODE_UNKNOWN
+	// 	fmt.Println("session err", err)
+	// 	return
+	// }
+}
+
+type TaskInfo struct {
 }
 
 func Issue(c *gin.Context) {
@@ -121,7 +127,7 @@ func Issue(c *gin.Context) {
 
 	defer CoderspMsg(&resp, c)
 	//2. 解析请求消息
-	var taskinfo bcos.TaskInfo
+	var taskinfo TaskInfo
 	err := c.ShouldBind(&taskinfo)
 	if err != nil {
 
@@ -130,20 +136,20 @@ func Issue(c *gin.Context) {
 	}
 	fmt.Printf("Issue:%+v\n", taskinfo)
 	//3. 从session获取用户和密码信息
-	store := ginsession.FromContext(c)
-	username, ok1 := store.Get("username")
-	password, ok2 := store.Get("password")
-	if !ok1 || !ok2 {
-		resp.Code = RESPCODE_UNKNOWN
-		fmt.Println("Failed to get session")
-		return
-	}
-	//4. 调用智能合约
-	err = bcos.Issue(username.(string), password.(string), taskinfo.Desc, taskinfo.Bonus)
-	if err != nil {
-		resp.Code = RESPCODE_BLKERR
-		log.Panic("failed to bcos.Issue", err)
-	}
+	// store := ginsession.FromContext(c)
+	// username, ok1 := store.Get("username")
+	// password, ok2 := store.Get("password")
+	// if !ok1 || !ok2 {
+	// 	resp.Code = RESPCODE_UNKNOWN
+	// 	fmt.Println("Failed to get session")
+	// 	return
+	// }
+	// //4. 调用智能合约
+	// err = bcos.Issue(username.(string), password.(string), taskinfo.Desc, taskinfo.Bonus)
+	// if err != nil {
+	// 	resp.Code = RESPCODE_BLKERR
+	// 	log.Panic("failed to bcos.Issue", err)
+	// }
 
 }
 
@@ -162,29 +168,29 @@ func Tasklist(c *gin.Context) {
 	fmt.Println("Tasklist:page = ", ipage)
 
 	//3. 获取任务列表信息
-	tasks, err := bcos.Tasklist()
-	if err != nil {
-		resp.Code = RESPCODE_BLKERR
-		log.Panic("failed to Tasklist", err)
-	}
+	// tasks, err := bcos.Tasklist()
+	// if err != nil {
+	// 	resp.Code = RESPCODE_BLKERR
+	// 	log.Panic("failed to Tasklist", err)
+	// }
 
-	//4. 响应消息填写
-	//需要根据page计算要返回的列表是什么
-	ibegin := (ipage - 1) * 10
-	iend := ipage * 10
-	if iend > len(tasks) {
-		iend = len(tasks)
-	}
-	//data:{total:8, data:[]list}
-	data := struct {
-		Total int         `json:"total"`
-		Data  interface{} `json:"data"`
-	}{
-		Total: len(tasks),
-		Data:  tasks[ibegin:iend],
-	}
+	// //4. 响应消息填写
+	// //需要根据page计算要返回的列表是什么
+	// ibegin := (ipage - 1) * 10
+	// iend := ipage * 10
+	// if iend > len(tasks) {
+	// 	iend = len(tasks)
+	// }
+	// //data:{total:8, data:[]list}
+	// data := struct {
+	// 	Total int         `json:"total"`
+	// 	Data  interface{} `json:"data"`
+	// }{
+	// 	Total: len(tasks),
+	// 	Data:  tasks[ibegin:iend],
+	// }
 
-	resp.Data = data
+	// resp.Data = data
 
 }
 
@@ -197,7 +203,7 @@ func Update(c *gin.Context) {
 
 	defer CoderspMsg(&resp, c)
 	//2. 解析请求消息
-	var taskinfo bcos.TaskInfo
+	var taskinfo TaskInfo
 	err := c.ShouldBind(&taskinfo)
 	if err != nil {
 
@@ -206,21 +212,21 @@ func Update(c *gin.Context) {
 	}
 	fmt.Printf("Update:%+v\n", taskinfo)
 	//3. 从session获取用户和密码信息
-	store := ginsession.FromContext(c)
-	username, ok1 := store.Get("username")
-	password, ok2 := store.Get("password")
-	if !ok1 || !ok2 {
-		resp.Code = RESPCODE_UNKNOWN
-		fmt.Println("Failed to get session")
-		return
-	}
+	// store := ginsession.FromContext(c)
+	// username, ok1 := store.Get("username")
+	// password, ok2 := store.Get("password")
+	// if !ok1 || !ok2 {
+	// 	resp.Code = RESPCODE_UNKNOWN
+	// 	fmt.Println("Failed to get session")
+	// 	return
+	// }
 	//4. 调用智能合约
-	taskID, _ := strconv.Atoi(taskinfo.TaskID)
+	// taskID, _ := strconv.Atoi(taskinfo.TaskID)
 
-	err = bcos.Update(username.(string), password.(string), taskinfo.Comment, int64(taskID), taskinfo.Status)
-	if err != nil {
-		resp.Code = RESPCODE_BLKERR
-		log.Panic("failed to bcos.Update", err)
-	}
+	// err = bcos.Update(username.(string), password.(string), taskinfo.Comment, int64(taskID), taskinfo.Status)
+	// if err != nil {
+	// 	resp.Code = RESPCODE_BLKERR
+	// 	log.Panic("failed to bcos.Update", err)
+	// }
 
 }
