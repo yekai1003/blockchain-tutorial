@@ -31,15 +31,15 @@ func init() {
 }
 
 type LoginReq struct {
-	Adminname string `json:"admin"`
-	Username  string `json:"sname"`
-	Password  string `json:"password"`
+	Adminname eos.Name `json:"admin"`
+	Username  eos.Name `json:"sname"`
+	Password  string   `json:"password"`
 }
 
 func Login(username, password string) (bool, error) {
 
 	// 构建Action数据
-	data := LoginReq{"admin", username, password}
+	data := LoginReq{eos.Name("admin"), eos.Name(username), password}
 	actData := eos.NewActionData(data)
 	api.Debug = true
 
