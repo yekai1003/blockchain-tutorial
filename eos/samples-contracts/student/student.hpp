@@ -19,7 +19,7 @@ class[[eosio::contract("student")]] student : public contract
             EOSLIB_SERIALIZE( person, (sid)(sname)(sage))
         };
 
-        typedef eosio::multi_index<"persons"_n, person> pernsons;
+        typedef eosio::multi_index<"persons"_n, person> persons;
 
         [[eosio::action]]
         void add(uint64_t sid, string sname, uint8_t sage);
@@ -29,6 +29,8 @@ class[[eosio::contract("student")]] student : public contract
         uint8_t getage(uint64_t sid);
         [[eosio::action]]
         string getname(uint64_t sid);
+        [[eosio::action]]
+        void erase(uint64_t sid);
 
     private:
 
