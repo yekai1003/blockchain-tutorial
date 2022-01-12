@@ -13,7 +13,7 @@ https://developers.eos.io/welcome/latest/reference/sdk-api-references
 nodeos节点启动
 
 ```sh
-nohup nodeos -e -p eosio --plugin eosio::chain_plugin --plugin eosio::producer_api_plugin --plugin eosio::chain_api_plugin --plugin eosio::history_api_plugin --http-server-address "0.0.0.0:8888" --contracts-console --verbose-http-errors --hard-replay-blockchain --replay-blockchain  > eos.log &
+nohup nodeos -e -p eosio --plugin eosio::chain_plugin --plugin eosio::producer_api_plugin --plugin eosio::chain_api_plugin --plugin eosio::history_api_plugin --http-server-address "127.0.0.1:8888" --contracts-console --verbose-http-errors --hard-replay-blockchain --replay-blockchain  > eos.log &
 ```
 
 查看区块信息
@@ -350,9 +350,9 @@ import (
 )
 
 type AddData struct {
-	Sid   uint64 `json:"sid"`
-	Sname string `json:"sname"`
-	Sage  uint8  `json:"sage"`
+	Sid   uint64   `json:"sid"`
+	Sname eos.Name `json:"sname"`
+	Sage  uint8    `json:"sage"`
 }
 
 func main() {
@@ -361,7 +361,7 @@ func main() {
 	//ctx := context.Background()
 
 	// 构建Action数据
-	data := AddData{10, "messi", 33}
+	data := AddData{11, "messi", 33}
 	actData := eos.NewActionData(data)
 
 	// 构建调用权限级别
