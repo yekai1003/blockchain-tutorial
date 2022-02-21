@@ -12,14 +12,14 @@ void userauth::userreg(name admin, name sname, string password)
     });
 }
 
-bool userauth::login(name admin, name sname, string password) 
+string userauth::login(name admin, name sname, string password) 
 {
    users us(get_self(), admin.value);
    auto itr = us.find(sname.value);
    check(itr != us.end(), "user does not exists.");
    if(itr->password == password) {
-      return true;
+      return "true";
    }
 
-   return false;
+   return "false";
 }

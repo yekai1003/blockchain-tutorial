@@ -2,7 +2,6 @@ package routes
 
 import (
 	"eostask/eosgo"
-	_ "eostask/eosgo"
 	"fmt"
 	"log"
 	"net/http"
@@ -84,13 +83,13 @@ func Login(c *gin.Context) {
 	//2. 解析请求消息
 	var ui UserInfo
 	err := c.ShouldBind(&ui)
+
 	if err != nil {
 
 		resp.Code = RESPCODE_PARAMERR
 		log.Panic("failed to ShouldBind", err)
 	}
 	fmt.Printf("Login:%+v\n", ui)
-
 	//3. 调用区块链合约
 	eosgo.Login(ui.UserName, ui.Passwd)
 	// ok, err := bcos.Login(ui.UserName, ui.Passwd)

@@ -23,7 +23,7 @@ class[[eosio::contract("userauth")]] userauth : public contract
         [[eosio::action]]
         void userreg(name admin, name sname, string password);
         [[eosio::action]]
-        bool login(name admin, name sname, string password);
+        string login(name admin, name sname, string password);
 
     private:
 

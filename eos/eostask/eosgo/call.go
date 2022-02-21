@@ -17,7 +17,6 @@ func init() {
 		Actor:      eos.AN("admin"),
 		Permission: eos.PN("active"),
 	}
-
 	keyBag := &eos.KeyBag{}
 	keyBag.ImportPrivateKey(context.Background(), "5HsSt8BTrUkGPBmB7tMbBFvdA3TczUbaZMtH7buceV5H29FXMqc")
 
