@@ -1,0 +1,23 @@
+# This is a toml's config for fabric-fpsp
+
+version = "1.0"
+blockchain = "fisco" #fisco or fabric
+svrport = ":8181"
+logpath = "./logs/"
+
+[fabric]
+usercode = "userauth"
+evidencecode = "evidence"
+channel = "ykchannel"
+orgname = "Org1"
+adminname = "Admin"
+connectionfile = "connection-org1.yaml"
+
+
+
+[fabric.wallet]
+walletdir = "wallet"
+userkey = "appUser"
+
+[fisco]
+configfile = "fisco.toml"
