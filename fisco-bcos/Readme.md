@@ -176,4 +176,4 @@ tcp6       0      0 :::5002                 :::*                    LISTEN      
 
 看到如下效果，就代表WeBASE-Front安装成功了。
 
-![image-20220315160629561](images\fisco-webase-front.png)
+![image-20220315160629561](images/fisco-webase-front.png)
