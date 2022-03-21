@@ -78,6 +78,14 @@ sh install.sh -w Abcd@123
 ps aux|grep gaussdb
 ```
 
+使用gs_ctl检查运行情况
+
+```sh
+gs_ctl query -D /opt/software/openGauss/data/single_node
+```
+
+
+
 可以使用gsql登录
 
 ```sh
