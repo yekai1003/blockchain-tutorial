@@ -1,0 +1,236 @@
+2022-03-16 15:58:11,612 DEBUG - connect 192.168.137.240:20200,as socket <socket.socket fd=5, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('192.168.137.1', 57688), raddr=('192.168.137.240', 20200)>
+2022-03-16 15:58:11,621 DEBUG - ChannelRecvThread:start thread-->
+2022-03-16 15:58:11,621 DEBUG - ChannelRecvThread channelHandler.ssock.recv begin.
+2022-03-16 15:58:11,621 DEBUG - channelSendThread:start thread-->
+2022-03-16 15:58:11,622 DEBUG - Thread-4:start thread-->
+2022-03-16 15:58:11,622 DEBUG - channelHandler:start thread-->
+2022-03-16 15:58:11,623 DEBUG - channelSendThread send pack len:70,type:0x12,result:0x0,seq:b'd35ace12a4fe11ecbe38e4a8dffef43a',data:b'{"jsonrpc": "2.0", "method": "getBlockNumber", "params": [1], "id": 0}'
+2022-03-16 15:58:11,625 DEBUG - channelHandler.ssock.recv len:82
+2022-03-16 15:58:11,625 DEBUG - total bytes to decode 82, datalen 82
+2022-03-16 15:58:11,625 DEBUG - ChannelRecvThread:pack from node, put queue(qsize0),detail len:82,type:0x12,result:0x0,seq:b'd35ace12a4fe11ecbe38e4a8dffef43a',data:b'{"id":0,"jsonrpc":"2.0","result":"0x1"}\n'
+2022-03-16 15:58:11,625 DEBUG - ChannelRecvThread channelHandler.ssock.recv begin.
+2022-03-16 15:58:11,625 DEBUG - onResponse, emitter: getResult_b'd35ace12a4fe11ecbe38e4a8dffef43a'_18
+2022-03-16 15:58:11,626 DEBUG - response from server , seq: b'd35ace12a4fe11ecbe38e4a8dffef43a', type:18
+2022-03-16 15:58:11,626 DEBUG - block notify emitter: onResponse_b'00000000000000000000000000000000'_4097
+2022-03-16 15:58:11,626 INFO - using protocol channel
+2022-03-16 15:58:11,626 DEBUG - channelSendThread send pack len:19,type:0x32,result:0x0,seq:b'd35b4e46a4fe11ecbe38e4a8dffef43a',data:["_block_notify_1"]
+2022-03-16 15:58:11,676 INFO - disconnect for read/write error, host: 192.168.137.240, port: 20200
+2022-03-16 16:05:36,935 DEBUG - connect 192.168.137.240:20200,as socket <socket.socket fd=5, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('192.168.137.1', 58484), raddr=('192.168.137.240', 20200)>
+2022-03-16 16:05:36,946 DEBUG - ChannelRecvThread:start thread-->
+2022-03-16 16:05:36,946 DEBUG - ChannelRecvThread channelHandler.ssock.recv begin.
+2022-03-16 16:05:36,946 DEBUG - channelSendThread:start thread-->
+2022-03-16 16:05:36,946 DEBUG - Thread-4:start thread-->
+2022-03-16 16:05:36,947 DEBUG - channelHandler:start thread-->
+2022-03-16 16:05:36,948 DEBUG - channelSendThread send pack len:70,type:0x12,result:0x0,seq:b'dcc9f756a4ff11ecb550e4a8dffef43a',data:b'{"jsonrpc": "2.0", "method": "getBlockNumber", "params": [1], "id": 0}'
+2022-03-16 16:05:36,950 DEBUG - channelHandler.ssock.recv len:82
+2022-03-16 16:05:36,950 DEBUG - total bytes to decode 82, datalen 82
+2022-03-16 16:05:36,950 DEBUG - ChannelRecvThread:pack from node, put queue(qsize0),detail len:82,type:0x12,result:0x0,seq:b'dcc9f756a4ff11ecb550e4a8dffef43a',data:b'{"id":0,"jsonrpc":"2.0","result":"0x1"}\n'
+2022-03-16 16:05:36,950 DEBUG - ChannelRecvThread channelHandler.ssock.recv begin.
+2022-03-16 16:05:36,951 DEBUG - onResponse, emitter: getResult_b'dcc9f756a4ff11ecb550e4a8dffef43a'_18
+2022-03-16 16:05:36,951 DEBUG - response from server , seq: b'dcc9f756a4ff11ecb550e4a8dffef43a', type:18
+2022-03-16 16:05:36,951 DEBUG - block notify emitter: onResponse_b'00000000000000000000000000000000'_4097
+2022-03-16 16:05:36,952 INFO - using protocol channel
+2022-03-16 16:05:36,952 DEBUG - channelSendThread send pack len:19,type:0x32,result:0x0,seq:b'dcca995ea4ff11ecb550e4a8dffef43a',data:["_block_notify_1"]
+2022-03-16 16:05:37,779 DEBUG - channelSendThread send pack len:202,type:0x12,result:0x0,seq:b'dd48cb1ca4ff11ecb550e4a8dffef43a',data:b'{"jsonrpc": "2.0", "method": "call", "params": [1, {"data": "0x6d4ce63c", "from": "0x95198B93705e394a916579e048c8A32DdFB900f7", "to": "0x792a54133323321bd7ef73374e48b18529e264e3", "value": 0}], "id": 1}'
+2022-03-16 16:05:37,782 DEBUG - channelHandler.ssock.recv len:326
+2022-03-16 16:05:37,782 DEBUG - total bytes to decode 326, datalen 326
+2022-03-16 16:05:37,782 DEBUG - ChannelRecvThread:pack from node, put queue(qsize0),detail len:326,type:0x12,result:0x0,seq:b'dd48cb1ca4ff11ecb550e4a8dffef43a',data:b'{"id":1,"jsonrpc":"2.0","result":{"currentBlockNumber":"0x1","output":"0x0000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000000d48656c6c6f2c20576f726c642100000000000000000000000000000000000000","status":"0x0"}}\n'
+2022-03-16 16:05:37,782 DEBUG - ChannelRecvThread channelHandler.ssock.recv begin.
+2022-03-16 16:05:37,783 DEBUG - onResponse, emitter: getResult_b'dd48cb1ca4ff11ecb550e4a8dffef43a'_18
+2022-03-16 16:05:37,783 DEBUG - response from server , seq: b'dd48cb1ca4ff11ecb550e4a8dffef43a', type:18
+2022-03-16 16:05:37,788 DEBUG - channelSendThread send pack len:508,type:0x12,result:0x0,seq:b'dd4a2ae8a4ff11ecb550e4a8dffef43a',data:b'{"jsonrpc": "2.0", "method": "sendRawTransaction", "params": [1, "0xf8d48404c27c8b8401c9c3808401c9c3808201f594792a54133323321bd7ef73374e48b18529e264e380b8644ed3885e0000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000000261610000000000000000000000000000000000000000000000000000000000000101801ba063ccc2bff391fec1276efc0d5a96973e1c47aead01c3a956f7c5eb90ae97c661a06fc6e9b3fa163cfb6b4cf155203f94110ca37ad7149679a4537d00d02aecfb7f"], "id": 2}'
+2022-03-16 16:05:37,789 DEBUG - channelHandler.ssock.recv len:145
+2022-03-16 16:05:37,790 DEBUG - total bytes to decode 145, datalen 145
+2022-03-16 16:05:37,790 DEBUG - ChannelRecvThread:pack from node, put queue(qsize0),detail len:145,type:0x12,result:0x0,seq:b'dd4a2ae8a4ff11ecb550e4a8dffef43a',data:b'{"id":2,"jsonrpc":"2.0","result":"0x21f883b66e4392778ebc7edd0213b072c950e501e95bffb9acfb9615badfe59e"}\n'
+2022-03-16 16:05:37,790 DEBUG - ChannelRecvThread channelHandler.ssock.recv begin.
+2022-03-16 16:05:37,792 DEBUG - onResponse, emitter: getResult_b'dd4a2ae8a4ff11ecb550e4a8dffef43a'_18
+2022-03-16 16:05:37,792 DEBUG - response from server , seq: b'dd4a2ae8a4ff11ecb550e4a8dffef43a', type:18
+2022-03-16 16:05:37,840 DEBUG - channelHandler.ssock.recv len:61
+2022-03-16 16:05:37,840 DEBUG - total bytes to decode 61, datalen 61
+2022-03-16 16:05:37,840 DEBUG - ChannelRecvThread:pack from node, put queue(qsize0),detail len:61,type:0x1001,result:0x0,seq:b'00000000000000000000000000000000',data:b'\x10_block_notify_11,2'
+2022-03-16 16:05:37,841 DEBUG - ChannelRecvThread channelHandler.ssock.recv begin.
+2022-03-16 16:05:37,841 DEBUG - channelHandler.ssock.recv len:1804
+2022-03-16 16:05:37,841 DEBUG - total bytes to decode 1804, datalen 1804
+2022-03-16 16:05:37,841 DEBUG - ChannelRecvThread:pack from node, put queue(qsize1),detail len:1804,type:0x1000,result:0x0,seq:b'dd4a2ae8a4ff11ecb550e4a8dffef43a',data:b'{\n   "blockHash" : "0x0cef7b090039078cde7cf5e36c3f4f1732fb7cf9fccb48a0d9fac153319740df",\n   "blockNumber" : "0x2",\n   "contractAddress" : "0x0000000000000000000000000000000000000000",\n   "from" : "0x95198b93705e394a916579e048c8a32ddfb900f7",\n   "gasUsed" : "0x7835",\n   "input" : "0x4ed3885e000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000000026161000000000000000000000000000000000000000000000000000000000000",\n   "logs" : [\n      {\n         "address" : "0x792a54133323321bd7ef73374e48b18529e264e3",\n         "data" : "0x000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000000026161000000000000000000000000000000000000000000000000000000000000",\n         "topics" : [ "0xafb180742c1292ea5d67c4f6d51283ecb11e49f8389f4539bef82135d689e118" ]\n      }\n   ],\n   "logsBloom" : "0x00000000000000000000000000000000000000800000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000800000000000000000000000000000000000000000000000000000000000000000000000000000004000000000000000000000000000000000040000000000000000000000",\n   "output" : "0x",\n   "root" : "0x18dc1ec1fd8fc09093d858f5a82b900257ab043b72af7cdbadb01703d1bec286",\n   "status" : "0x0",\n   "statusMsg" : "None",\n   "to" : "0x792a54133323321bd7ef73374e48b18529e264e3",\n   "transactionHash" : "0x21f883b66e4392778ebc7edd0213b072c950e501e95bffb9acfb9615badfe59e",\n   "transactionIndex" : "0x0"\n}\n'
+2022-03-16 16:05:37,841 DEBUG - ChannelRecvThread channelHandler.ssock.recv begin.
+2022-03-16 16:05:37,842 DEBUG - onResponse, emitter: getResult_b'00000000000000000000000000000000'_4097
+2022-03-16 16:05:37,842 DEBUG - receive block notify: seq: b'00000000000000000000000000000000' type:4097, data:_block_notify_11,2
+2022-03-16 16:05:37,842 DEBUG - currentBlockNumber: 2
+2022-03-16 16:05:37,842 DEBUG - onResponse, emitter: getResult_b'dd4a2ae8a4ff11ecb550e4a8dffef43a'_4096
+2022-03-16 16:05:37,843 DEBUG - response from server , seq: b'dd4a2ae8a4ff11ecb550e4a8dffef43a', type:4096
+2022-03-16 16:05:37,848 DEBUG - channelSendThread send pack len:202,type:0x12,result:0x0,seq:b'dd53355ca4ff11ecb550e4a8dffef43a',data:b'{"jsonrpc": "2.0", "method": "call", "params": [1, {"data": "0x6d4ce63c", "from": "0x95198B93705e394a916579e048c8A32DdFB900f7", "to": "0xeed5df79085d53f4b87dcb1f4b594453ba6a1a63", "value": 0}], "id": 3}'
+2022-03-16 16:05:37,849 DEBUG - channelHandler.ssock.recv len:399
+2022-03-16 16:05:37,849 DEBUG - total bytes to decode 399, datalen 399
+2022-03-16 16:05:37,849 DEBUG - ChannelRecvThread:pack from node, put queue(qsize0),detail len:399,type:0x12,result:0x0,seq:b'dd53355ca4ff11ecb550e4a8dffef43a',data:b'{"id":3,"jsonrpc":"2.0","result":{"currentBlockNumber":"0x2","output":"0x08c379a0000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000000364572726f7220616464726573733a6565643564663739303835643533663462383764636231663462353934343533626136613161363300000000000000000000","status":"0x1a"}}\n'
+2022-03-16 16:05:37,850 DEBUG - ChannelRecvThread channelHandler.ssock.recv begin.
+2022-03-16 16:05:37,850 DEBUG - onResponse, emitter: getResult_b'dd53355ca4ff11ecb550e4a8dffef43a'_18
+2022-03-16 16:05:37,850 DEBUG - response from server , seq: b'dd53355ca4ff11ecb550e4a8dffef43a', type:18
+2022-03-16 16:05:37,908 INFO - disconnect for read/write error, host: 192.168.137.240, port: 20200
+2022-03-16 16:09:45,057 DEBUG - connect 192.168.137.240:20200,as socket <socket.socket fd=5, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('192.168.137.1', 58872), raddr=('192.168.137.240', 20200)>
+2022-03-16 16:09:45,068 DEBUG - ChannelRecvThread:start thread-->
+2022-03-16 16:09:45,069 DEBUG - ChannelRecvThread channelHandler.ssock.recv begin.
+2022-03-16 16:09:45,069 DEBUG - Thread-4:start thread-->
+2022-03-16 16:09:45,069 DEBUG - channelSendThread:start thread-->
+2022-03-16 16:09:45,069 DEBUG - channelHandler:start thread-->
+2022-03-16 16:09:45,071 DEBUG - channelSendThread send pack len:70,type:0x12,result:0x0,seq:b'70ae6c2ca50011ecb4a6e4a8dffef43a',data:b'{"jsonrpc": "2.0", "method": "getBlockNumber", "params": [1], "id": 0}'
+2022-03-16 16:09:45,072 DEBUG - channelHandler.ssock.recv len:82
+2022-03-16 16:09:45,072 DEBUG - total bytes to decode 82, datalen 82
+2022-03-16 16:09:45,072 DEBUG - ChannelRecvThread:pack from node, put queue(qsize0),detail len:82,type:0x12,result:0x0,seq:b'70ae6c2ca50011ecb4a6e4a8dffef43a',data:b'{"id":0,"jsonrpc":"2.0","result":"0x2"}\n'
+2022-03-16 16:09:45,072 DEBUG - ChannelRecvThread channelHandler.ssock.recv begin.
+2022-03-16 16:09:45,073 DEBUG - onResponse, emitter: getResult_b'70ae6c2ca50011ecb4a6e4a8dffef43a'_18
+2022-03-16 16:09:45,073 DEBUG - response from server , seq: b'70ae6c2ca50011ecb4a6e4a8dffef43a', type:18
+2022-03-16 16:09:45,073 DEBUG - block notify emitter: onResponse_b'00000000000000000000000000000000'_4097
+2022-03-16 16:09:45,074 INFO - using protocol channel
+2022-03-16 16:09:45,074 DEBUG - channelSendThread send pack len:19,type:0x32,result:0x0,seq:b'70aef502a50011ecb4a6e4a8dffef43a',data:["_block_notify_1"]
+2022-03-16 16:09:45,888 DEBUG - channelSendThread send pack len:202,type:0x12,result:0x0,seq:b'712b34bea50011ecb4a6e4a8dffef43a',data:b'{"jsonrpc": "2.0", "method": "call", "params": [1, {"data": "0x6d4ce63c", "from": "0x95198B93705e394a916579e048c8A32DdFB900f7", "to": "0x792a54133323321bd7ef73374e48b18529e264e3", "value": 0}], "id": 1}'
+2022-03-16 16:09:45,890 DEBUG - channelHandler.ssock.recv len:326
+2022-03-16 16:09:45,890 DEBUG - total bytes to decode 326, datalen 326
+2022-03-16 16:09:45,890 DEBUG - ChannelRecvThread:pack from node, put queue(qsize0),detail len:326,type:0x12,result:0x0,seq:b'712b34bea50011ecb4a6e4a8dffef43a',data:b'{"id":1,"jsonrpc":"2.0","result":{"currentBlockNumber":"0x2","output":"0x000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000000026161000000000000000000000000000000000000000000000000000000000000","status":"0x0"}}\n'
+2022-03-16 16:09:45,890 DEBUG - ChannelRecvThread channelHandler.ssock.recv begin.
+2022-03-16 16:09:45,891 DEBUG - onResponse, emitter: getResult_b'712b34bea50011ecb4a6e4a8dffef43a'_18
+2022-03-16 16:09:45,891 DEBUG - response from server , seq: b'712b34bea50011ecb4a6e4a8dffef43a', type:18
+2022-03-16 16:09:45,898 DEBUG - channelSendThread send pack len:508,type:0x12,result:0x0,seq:b'712cb6cca50011ecb4a6e4a8dffef43a',data:b'{"jsonrpc": "2.0", "method": "sendRawTransaction", "params": [1, "0xf8d48402120eab8401c9c3808401c9c3808201f694792a54133323321bd7ef73374e48b18529e264e380b8644ed3885e0000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000000261610000000000000000000000000000000000000000000000000000000000000101801ca01acd02f5c24a4a4b946b39ce4fc810a6e9d684326877816b898a2098cf32bbf9a01ecfce1bff304207c32eb011f974237d5c0cfb2924afe092c3e8bbfa31600d5a"], "id": 2}'
+2022-03-16 16:09:45,900 DEBUG - channelHandler.ssock.recv len:145
+2022-03-16 16:09:45,901 DEBUG - total bytes to decode 145, datalen 145
+2022-03-16 16:09:45,901 DEBUG - ChannelRecvThread:pack from node, put queue(qsize0),detail len:145,type:0x12,result:0x0,seq:b'712cb6cca50011ecb4a6e4a8dffef43a',data:b'{"id":2,"jsonrpc":"2.0","result":"0x0d15e4f303ce15e101a6cc0f939c287c6271cf4c64cebbfe2bf5564f2990dd4c"}\n'
+2022-03-16 16:09:45,901 DEBUG - ChannelRecvThread channelHandler.ssock.recv begin.
+2022-03-16 16:09:45,901 DEBUG - onResponse, emitter: getResult_b'712cb6cca50011ecb4a6e4a8dffef43a'_18
+2022-03-16 16:09:45,901 DEBUG - response from server , seq: b'712cb6cca50011ecb4a6e4a8dffef43a', type:18
+2022-03-16 16:09:45,910 DEBUG - channelHandler.ssock.recv len:61
+2022-03-16 16:09:45,910 DEBUG - total bytes to decode 61, datalen 61
+2022-03-16 16:09:45,910 DEBUG - ChannelRecvThread:pack from node, put queue(qsize0),detail len:61,type:0x1001,result:0x0,seq:b'00000000000000000000000000000000',data:b'\x10_block_notify_11,3'
+2022-03-16 16:09:45,910 DEBUG - ChannelRecvThread channelHandler.ssock.recv begin.
+2022-03-16 16:09:45,911 DEBUG - channelHandler.ssock.recv len:1804
+2022-03-16 16:09:45,911 DEBUG - total bytes to decode 1804, datalen 1804
+2022-03-16 16:09:45,911 DEBUG - ChannelRecvThread:pack from node, put queue(qsize1),detail len:1804,type:0x1000,result:0x0,seq:b'712cb6cca50011ecb4a6e4a8dffef43a',data:b'{\n   "blockHash" : "0x82e5e62c05f7ba3cb688f5b044dc7cbe9fc421d061141fe2f4e4523617f57518",\n   "blockNumber" : "0x3",\n   "contractAddress" : "0x0000000000000000000000000000000000000000",\n   "from" : "0x95198b93705e394a916579e048c8a32ddfb900f7",\n   "gasUsed" : "0x67cd",\n   "input" : "0x4ed3885e000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000000026161000000000000000000000000000000000000000000000000000000000000",\n   "logs" : [\n      {\n         "address" : "0x792a54133323321bd7ef73374e48b18529e264e3",\n         "data" : "0x000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000000026161000000000000000000000000000000000000000000000000000000000000",\n         "topics" : [ "0xafb180742c1292ea5d67c4f6d51283ecb11e49f8389f4539bef82135d689e118" ]\n      }\n   ],\n   "logsBloom" : "0x00000000000000000000000000000000000000800000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000800000000000000000000000000000000000000000000000000000000000000000000000000000004000000000000000000000000000000000040000000000000000000000",\n   "output" : "0x",\n   "root" : "0x0000000000000000000000000000000000000000000000000000000000000000",\n   "status" : "0x0",\n   "statusMsg" : "None",\n   "to" : "0x792a54133323321bd7ef73374e48b18529e264e3",\n   "transactionHash" : "0x0d15e4f303ce15e101a6cc0f939c287c6271cf4c64cebbfe2bf5564f2990dd4c",\n   "transactionIndex" : "0x0"\n}\n'
+2022-03-16 16:09:45,911 DEBUG - ChannelRecvThread channelHandler.ssock.recv begin.
+2022-03-16 16:09:45,912 DEBUG - onResponse, emitter: getResult_b'00000000000000000000000000000000'_4097
+2022-03-16 16:09:45,912 DEBUG - receive block notify: seq: b'00000000000000000000000000000000' type:4097, data:_block_notify_11,3
+2022-03-16 16:09:45,912 DEBUG - currentBlockNumber: 3
+2022-03-16 16:09:45,912 DEBUG - onResponse, emitter: getResult_b'712cb6cca50011ecb4a6e4a8dffef43a'_4096
+2022-03-16 16:09:45,912 DEBUG - response from server , seq: b'712cb6cca50011ecb4a6e4a8dffef43a', type:4096
+2022-03-16 16:09:45,916 DEBUG - channelSendThread send pack len:202,type:0x12,result:0x0,seq:b'712f856ea50011ecb4a6e4a8dffef43a',data:b'{"jsonrpc": "2.0", "method": "call", "params": [1, {"data": "0x6d4ce63c", "from": "0x95198B93705e394a916579e048c8A32DdFB900f7", "to": "0x792a54133323321bd7ef73374e48b18529e264e3", "value": 0}], "id": 3}'
+2022-03-16 16:09:45,918 DEBUG - channelHandler.ssock.recv len:326
+2022-03-16 16:09:45,918 DEBUG - total bytes to decode 326, datalen 326
+2022-03-16 16:09:45,918 DEBUG - ChannelRecvThread:pack from node, put queue(qsize0),detail len:326,type:0x12,result:0x0,seq:b'712f856ea50011ecb4a6e4a8dffef43a',data:b'{"id":3,"jsonrpc":"2.0","result":{"currentBlockNumber":"0x3","output":"0x000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000000026161000000000000000000000000000000000000000000000000000000000000","status":"0x0"}}\n'
+2022-03-16 16:09:45,918 DEBUG - ChannelRecvThread channelHandler.ssock.recv begin.
+2022-03-16 16:09:45,919 DEBUG - onResponse, emitter: getResult_b'712f856ea50011ecb4a6e4a8dffef43a'_18
+2022-03-16 16:09:45,920 DEBUG - response from server , seq: b'712f856ea50011ecb4a6e4a8dffef43a', type:18
+2022-03-16 16:09:45,920 INFO - disconnect for read/write error, host: 192.168.137.240, port: 20200
+2022-03-16 16:09:45,921 DEBUG - channelHandler.ssock.recv len:0
+2022-03-16 16:09:45,922 DEBUG - channelHandler:thread finished ,keepWorking = False
+2022-03-16 16:09:45,931 DEBUG - ChannelRecvThread:thread finished ,keepWorking = False
+2022-03-16 16:09:46,118 DEBUG - channelSendThread:thread finished ,keepWorking = False
+2022-03-16 16:09:46,122 DEBUG - Thread-4:thread finished ,keepWorking = False
+2022-03-17 11:24:14,597 DEBUG - connect 192.168.137.240:20200,as socket <socket.socket fd=5, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('192.168.137.1', 59738), raddr=('192.168.137.240', 20200)>
+2022-03-17 11:24:14,616 DEBUG - ChannelRecvThread:start thread-->
+2022-03-17 11:24:14,616 DEBUG - ChannelRecvThread channelHandler.ssock.recv begin.
+2022-03-17 11:24:14,617 DEBUG - channelSendThread:start thread-->
+2022-03-17 11:24:14,617 DEBUG - Thread-4:start thread-->
+2022-03-17 11:24:14,617 DEBUG - channelHandler:start thread-->
+2022-03-17 11:24:14,619 DEBUG - channelSendThread send pack len:70,type:0x12,result:0x0,seq:b'b88cadbea5a111ec95b7e4a8dffef43a',data:b'{"jsonrpc": "2.0", "method": "getBlockNumber", "params": [1], "id": 0}'
+2022-03-17 11:24:14,620 DEBUG - channelHandler.ssock.recv len:82
+2022-03-17 11:24:14,620 DEBUG - total bytes to decode 82, datalen 82
+2022-03-17 11:24:14,620 DEBUG - ChannelRecvThread:pack from node, put queue(qsize0),detail len:82,type:0x12,result:0x0,seq:b'b88cadbea5a111ec95b7e4a8dffef43a',data:b'{"id":0,"jsonrpc":"2.0","result":"0x3"}\n'
+2022-03-17 11:24:14,620 DEBUG - ChannelRecvThread channelHandler.ssock.recv begin.
+2022-03-17 11:24:14,621 DEBUG - onResponse, emitter: getResult_b'b88cadbea5a111ec95b7e4a8dffef43a'_18
+2022-03-17 11:24:14,621 DEBUG - response from server , seq: b'b88cadbea5a111ec95b7e4a8dffef43a', type:18
+2022-03-17 11:24:14,622 DEBUG - block notify emitter: onResponse_b'00000000000000000000000000000000'_4097
+2022-03-17 11:24:14,622 INFO - using protocol channel
+2022-03-17 11:24:14,622 DEBUG - channelSendThread send pack len:19,type:0x32,result:0x0,seq:b'b88d396ea5a111ec95b7e4a8dffef43a',data:["_block_notify_1"]
+2022-03-17 11:24:15,465 DEBUG - channelSendThread send pack len:202,type:0x12,result:0x0,seq:b'b90dc502a5a111ec95b7e4a8dffef43a',data:b'{"jsonrpc": "2.0", "method": "call", "params": [1, {"data": "0x6d4ce63c", "from": "0x56730bD892FDcBbf13c2d8AB8Fd716D1D9231923", "to": "0x792a54133323321bd7ef73374e48b18529e264e3", "value": 0}], "id": 1}'
+2022-03-17 11:24:15,472 DEBUG - channelHandler.ssock.recv len:326
+2022-03-17 11:24:15,472 DEBUG - total bytes to decode 326, datalen 326
+2022-03-17 11:24:15,472 DEBUG - ChannelRecvThread:pack from node, put queue(qsize0),detail len:326,type:0x12,result:0x0,seq:b'b90dc502a5a111ec95b7e4a8dffef43a',data:b'{"id":1,"jsonrpc":"2.0","result":{"currentBlockNumber":"0x3","output":"0x000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000000026161000000000000000000000000000000000000000000000000000000000000","status":"0x0"}}\n'
+2022-03-17 11:24:15,472 DEBUG - ChannelRecvThread channelHandler.ssock.recv begin.
+2022-03-17 11:24:15,474 DEBUG - onResponse, emitter: getResult_b'b90dc502a5a111ec95b7e4a8dffef43a'_18
+2022-03-17 11:24:15,474 DEBUG - response from server , seq: b'b90dc502a5a111ec95b7e4a8dffef43a', type:18
+2022-03-17 11:24:15,481 DEBUG - channelSendThread send pack len:508,type:0x12,result:0x0,seq:b'b9104f34a5a111ec95b7e4a8dffef43a',data:b'{"jsonrpc": "2.0", "method": "sendRawTransaction", "params": [1, "0xf8d484108429dc8401c9c3808401c9c3808201f794792a54133323321bd7ef73374e48b18529e264e380b8644ed3885e0000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000000261610000000000000000000000000000000000000000000000000000000000000101801ba069660b17fcc69da95ec0a17987d16b587ead82a11ba619081f8027be7a0d315ba053e6836c61d085845b6781b0390da98c0594e875178532d40ad4b0bee04b7da3"], "id": 2}'
+2022-03-17 11:24:15,483 DEBUG - channelHandler.ssock.recv len:145
+2022-03-17 11:24:15,483 DEBUG - total bytes to decode 145, datalen 145
+2022-03-17 11:24:15,483 DEBUG - ChannelRecvThread:pack from node, put queue(qsize0),detail len:145,type:0x12,result:0x0,seq:b'b9104f34a5a111ec95b7e4a8dffef43a',data:b'{"id":2,"jsonrpc":"2.0","result":"0x17ead9bbe87d8774ea58293213612a8c653aabf02ab6e5cbbbd7e7e419a9a464"}\n'
+2022-03-17 11:24:15,483 DEBUG - ChannelRecvThread channelHandler.ssock.recv begin.
+2022-03-17 11:24:15,484 DEBUG - onResponse, emitter: getResult_b'b9104f34a5a111ec95b7e4a8dffef43a'_18
+2022-03-17 11:24:15,484 DEBUG - response from server , seq: b'b9104f34a5a111ec95b7e4a8dffef43a', type:18
+2022-03-17 11:24:15,792 DEBUG - channelHandler.ssock.recv len:61
+2022-03-17 11:24:15,792 DEBUG - total bytes to decode 61, datalen 61
+2022-03-17 11:24:15,792 DEBUG - ChannelRecvThread:pack from node, put queue(qsize0),detail len:61,type:0x1001,result:0x0,seq:b'00000000000000000000000000000000',data:b'\x10_block_notify_11,4'
+2022-03-17 11:24:15,792 DEBUG - ChannelRecvThread channelHandler.ssock.recv begin.
+2022-03-17 11:24:15,793 DEBUG - onResponse, emitter: getResult_b'00000000000000000000000000000000'_4097
+2022-03-17 11:24:15,793 DEBUG - receive block notify: seq: b'00000000000000000000000000000000' type:4097, data:_block_notify_11,4
+2022-03-17 11:24:15,793 DEBUG - currentBlockNumber: 4
+2022-03-17 11:24:15,793 DEBUG - channelHandler.ssock.recv len:1804
+2022-03-17 11:24:15,793 DEBUG - total bytes to decode 1804, datalen 1804
+2022-03-17 11:24:15,793 DEBUG - ChannelRecvThread:pack from node, put queue(qsize0),detail len:1804,type:0x1000,result:0x0,seq:b'b9104f34a5a111ec95b7e4a8dffef43a',data:b'{\n   "blockHash" : "0xc30e30302da2b4957004e69404485866e52f45798692acec73646c030dc2adf5",\n   "blockNumber" : "0x4",\n   "contractAddress" : "0x0000000000000000000000000000000000000000",\n   "from" : "0x56730bd892fdcbbf13c2d8ab8fd716d1d9231923",\n   "gasUsed" : "0x67cd",\n   "input" : "0x4ed3885e000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000000026161000000000000000000000000000000000000000000000000000000000000",\n   "logs" : [\n      {\n         "address" : "0x792a54133323321bd7ef73374e48b18529e264e3",\n         "data" : "0x000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000000026161000000000000000000000000000000000000000000000000000000000000",\n         "topics" : [ "0xafb180742c1292ea5d67c4f6d51283ecb11e49f8389f4539bef82135d689e118" ]\n      }\n   ],\n   "logsBloom" : "0x00000000000000000000000000000000000000800000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000800000000000000000000000000000000000000000000000000000000000000000000000000000004000000000000000000000000000000000040000000000000000000000",\n   "output" : "0x",\n   "root" : "0x0000000000000000000000000000000000000000000000000000000000000000",\n   "status" : "0x0",\n   "statusMsg" : "None",\n   "to" : "0x792a54133323321bd7ef73374e48b18529e264e3",\n   "transactionHash" : "0x17ead9bbe87d8774ea58293213612a8c653aabf02ab6e5cbbbd7e7e419a9a464",\n   "transactionIndex" : "0x0"\n}\n'
+2022-03-17 11:24:15,793 DEBUG - ChannelRecvThread channelHandler.ssock.recv begin.
+2022-03-17 11:24:15,795 DEBUG - onResponse, emitter: getResult_b'b9104f34a5a111ec95b7e4a8dffef43a'_4096
+2022-03-17 11:24:15,795 DEBUG - response from server , seq: b'b9104f34a5a111ec95b7e4a8dffef43a', type:4096
+2022-03-17 11:24:15,797 DEBUG - channelSendThread send pack len:202,type:0x12,result:0x0,seq:b'b9407088a5a111ec95b7e4a8dffef43a',data:b'{"jsonrpc": "2.0", "method": "call", "params": [1, {"data": "0x6d4ce63c", "from": "0x56730bD892FDcBbf13c2d8AB8Fd716D1D9231923", "to": "0x792a54133323321bd7ef73374e48b18529e264e3", "value": 0}], "id": 3}'
+2022-03-17 11:24:15,798 DEBUG - channelHandler.ssock.recv len:326
+2022-03-17 11:24:15,798 DEBUG - total bytes to decode 326, datalen 326
+2022-03-17 11:24:15,798 DEBUG - ChannelRecvThread:pack from node, put queue(qsize0),detail len:326,type:0x12,result:0x0,seq:b'b9407088a5a111ec95b7e4a8dffef43a',data:b'{"id":3,"jsonrpc":"2.0","result":{"currentBlockNumber":"0x4","output":"0x000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000000026161000000000000000000000000000000000000000000000000000000000000","status":"0x0"}}\n'
+2022-03-17 11:24:15,799 DEBUG - ChannelRecvThread channelHandler.ssock.recv begin.
+2022-03-17 11:24:15,799 DEBUG - onResponse, emitter: getResult_b'b9407088a5a111ec95b7e4a8dffef43a'_18
+2022-03-17 11:24:15,800 DEBUG - response from server , seq: b'b9407088a5a111ec95b7e4a8dffef43a', type:18
+2022-03-17 11:24:15,800 INFO - disconnect for read/write error, host: 192.168.137.240, port: 20200
+2022-03-17 11:24:15,801 DEBUG - channelHandler.ssock.recv len:0
+2022-03-17 11:24:15,801 DEBUG - channelHandler:thread finished ,keepWorking = False
+2022-03-17 11:24:15,812 DEBUG - ChannelRecvThread:thread finished ,keepWorking = False
+2022-03-17 11:24:15,997 DEBUG - channelSendThread:thread finished ,keepWorking = False
+2022-03-17 11:24:16,005 DEBUG - Thread-4:thread finished ,keepWorking = False
+2022-03-17 11:24:44,304 DEBUG - connect 192.168.137.240:20200,as socket <socket.socket fd=5, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('192.168.137.1', 59819), raddr=('192.168.137.240', 20200)>
+2022-03-17 11:24:44,315 DEBUG - ChannelRecvThread:start thread-->
+2022-03-17 11:24:44,315 DEBUG - ChannelRecvThread channelHandler.ssock.recv begin.
+2022-03-17 11:24:44,316 DEBUG - channelSendThread:start thread-->
+2022-03-17 11:24:44,316 DEBUG - Thread-4:start thread-->
+2022-03-17 11:24:44,316 DEBUG - channelHandler:start thread-->
+2022-03-17 11:24:44,318 DEBUG - channelSendThread send pack len:70,type:0x12,result:0x0,seq:b'ca4060dca5a111ec93cfe4a8dffef43a',data:b'{"jsonrpc": "2.0", "method": "getBlockNumber", "params": [1], "id": 0}'
+2022-03-17 11:24:44,319 DEBUG - channelHandler.ssock.recv len:82
+2022-03-17 11:24:44,319 DEBUG - total bytes to decode 82, datalen 82
+2022-03-17 11:24:44,319 DEBUG - ChannelRecvThread:pack from node, put queue(qsize0),detail len:82,type:0x12,result:0x0,seq:b'ca4060dca5a111ec93cfe4a8dffef43a',data:b'{"id":0,"jsonrpc":"2.0","result":"0x4"}\n'
+2022-03-17 11:24:44,319 DEBUG - ChannelRecvThread channelHandler.ssock.recv begin.
+2022-03-17 11:24:44,321 DEBUG - onResponse, emitter: getResult_b'ca4060dca5a111ec93cfe4a8dffef43a'_18
+2022-03-17 11:24:44,321 DEBUG - response from server , seq: b'ca4060dca5a111ec93cfe4a8dffef43a', type:18
+2022-03-17 11:24:44,321 DEBUG - block notify emitter: onResponse_b'00000000000000000000000000000000'_4097
+2022-03-17 11:24:44,321 INFO - using protocol channel
+2022-03-17 11:24:44,322 DEBUG - channelSendThread send pack len:19,type:0x32,result:0x0,seq:b'ca4103d4a5a111ec93cfe4a8dffef43a',data:["_block_notify_1"]
+2022-03-17 11:24:45,148 DEBUG - channelSendThread send pack len:202,type:0x12,result:0x0,seq:b'cabf1710a5a111ec93cfe4a8dffef43a',data:b'{"jsonrpc": "2.0", "method": "call", "params": [1, {"data": "0x6d4ce63c", "from": "0x56730bD892FDcBbf13c2d8AB8Fd716D1D9231923", "to": "0x792a54133323321bd7ef73374e48b18529e264e3", "value": 0}], "id": 1}'
+2022-03-17 11:24:45,150 DEBUG - channelHandler.ssock.recv len:326
+2022-03-17 11:24:45,150 DEBUG - total bytes to decode 326, datalen 326
+2022-03-17 11:24:45,150 DEBUG - ChannelRecvThread:pack from node, put queue(qsize0),detail len:326,type:0x12,result:0x0,seq:b'cabf1710a5a111ec93cfe4a8dffef43a',data:b'{"id":1,"jsonrpc":"2.0","result":{"currentBlockNumber":"0x4","output":"0x000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000000026161000000000000000000000000000000000000000000000000000000000000","status":"0x0"}}\n'
+2022-03-17 11:24:45,150 DEBUG - ChannelRecvThread channelHandler.ssock.recv begin.
+2022-03-17 11:24:45,151 DEBUG - onResponse, emitter: getResult_b'cabf1710a5a111ec93cfe4a8dffef43a'_18
+2022-03-17 11:24:45,151 DEBUG - response from server , seq: b'cabf1710a5a111ec93cfe4a8dffef43a', type:18
+2022-03-17 11:24:45,156 DEBUG - channelSendThread send pack len:508,type:0x12,result:0x0,seq:b'cac05576a5a111ec93cfe4a8dffef43a',data:b'{"jsonrpc": "2.0", "method": "sendRawTransaction", "params": [1, "0xf8d4842a6277668401c9c3808401c9c3808201f894792a54133323321bd7ef73374e48b18529e264e380b8644ed3885e0000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000000261610000000000000000000000000000000000000000000000000000000000000101801ba0a52688d2b79bb8c39c714323021755c67add3d24edc3a9e4d28486784f3a6999a071609626f82ae3c9f8a312b1b64a04f83cd84253522f81571077bf9ad0c7504c"], "id": 2}'
+2022-03-17 11:24:45,159 DEBUG - channelHandler.ssock.recv len:145
+2022-03-17 11:24:45,159 DEBUG - total bytes to decode 145, datalen 145
+2022-03-17 11:24:45,159 DEBUG - ChannelRecvThread:pack from node, put queue(qsize0),detail len:145,type:0x12,result:0x0,seq:b'cac05576a5a111ec93cfe4a8dffef43a',data:b'{"id":2,"jsonrpc":"2.0","result":"0xf5c5469cb95fef5fc0a77a026afe2bf37d164fb237b79d58da3acc6e85a01220"}\n'
+2022-03-17 11:24:45,159 DEBUG - ChannelRecvThread channelHandler.ssock.recv begin.
+2022-03-17 11:24:45,160 DEBUG - onResponse, emitter: getResult_b'cac05576a5a111ec93cfe4a8dffef43a'_18
+2022-03-17 11:24:45,160 DEBUG - response from server , seq: b'cac05576a5a111ec93cfe4a8dffef43a', type:18
+2022-03-17 11:24:45,496 DEBUG - channelHandler.ssock.recv len:61
+2022-03-17 11:24:45,497 DEBUG - total bytes to decode 61, datalen 61
+2022-03-17 11:24:45,497 DEBUG - ChannelRecvThread:pack from node, put queue(qsize0),detail len:61,type:0x1001,result:0x0,seq:b'00000000000000000000000000000000',data:b'\x10_block_notify_11,5'
+2022-03-17 11:24:45,497 DEBUG - ChannelRecvThread channelHandler.ssock.recv begin.
+2022-03-17 11:24:45,497 DEBUG - onResponse, emitter: getResult_b'00000000000000000000000000000000'_4097
+2022-03-17 11:24:45,497 DEBUG - receive block notify: seq: b'00000000000000000000000000000000' type:4097, data:_block_notify_11,5
+2022-03-17 11:24:45,497 DEBUG - currentBlockNumber: 5
+2022-03-17 11:24:45,504 DEBUG - channelHandler.ssock.recv len:1804
+2022-03-17 11:24:45,504 DEBUG - total bytes to decode 1804, datalen 1804
+2022-03-17 11:24:45,504 DEBUG - ChannelRecvThread:pack from node, put queue(qsize0),detail len:1804,type:0x1000,result:0x0,seq:b'cac05576a5a111ec93cfe4a8dffef43a',data:b'{\n   "blockHash" : "0x020ac546caf2721ec879896c96c5642d0a2789132112d4681f589e8a103f8e35",\n   "blockNumber" : "0x5",\n   "contractAddress" : "0x0000000000000000000000000000000000000000",\n   "from" : "0x56730bd892fdcbbf13c2d8ab8fd716d1d9231923",\n   "gasUsed" : "0x67cd",\n   "input" : "0x4ed3885e000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000000026161000000000000000000000000000000000000000000000000000000000000",\n   "logs" : [\n      {\n         "address" : "0x792a54133323321bd7ef73374e48b18529e264e3",\n         "data" : "0x000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000000026161000000000000000000000000000000000000000000000000000000000000",\n         "topics" : [ "0xafb180742c1292ea5d67c4f6d51283ecb11e49f8389f4539bef82135d689e118" ]\n      }\n   ],\n   "logsBloom" : "0x00000000000000000000000000000000000000800000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000800000000000000000000000000000000000000000000000000000000000000000000000000000004000000000000000000000000000000000040000000000000000000000",\n   "output" : "0x",\n   "root" : "0x0000000000000000000000000000000000000000000000000000000000000000",\n   "status" : "0x0",\n   "statusMsg" : "None",\n   "to" : "0x792a54133323321bd7ef73374e48b18529e264e3",\n   "transactionHash" : "0xf5c5469cb95fef5fc0a77a026afe2bf37d164fb237b79d58da3acc6e85a01220",\n   "transactionIndex" : "0x0"\n}\n'
+2022-03-17 11:24:45,504 DEBUG - ChannelRecvThread channelHandler.ssock.recv begin.
+2022-03-17 11:24:45,506 DEBUG - onResponse, emitter: getResult_b'cac05576a5a111ec93cfe4a8dffef43a'_4096
+2022-03-17 11:24:45,506 DEBUG - response from server , seq: b'cac05576a5a111ec93cfe4a8dffef43a', type:4096
+2022-03-17 11:24:45,513 DEBUG - channelSendThread send pack len:202,type:0x12,result:0x0,seq:b'caf6d3f8a5a111ec93cfe4a8dffef43a',data:b'{"jsonrpc": "2.0", "method": "call", "params": [1, {"data": "0x6d4ce63c", "from": "0x56730bD892FDcBbf13c2d8AB8Fd716D1D9231923", "to": "0x792a54133323321bd7ef73374e48b18529e264e3", "value": 0}], "id": 3}'
+2022-03-17 11:24:45,515 DEBUG - channelHandler.ssock.recv len:326
+2022-03-17 11:24:45,515 DEBUG - total bytes to decode 326, datalen 326
+2022-03-17 11:24:45,515 DEBUG - ChannelRecvThread:pack from node, put queue(qsize0),detail len:326,type:0x12,result:0x0,seq:b'caf6d3f8a5a111ec93cfe4a8dffef43a',data:b'{"id":3,"jsonrpc":"2.0","result":{"currentBlockNumber":"0x5","output":"0x000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000000026161000000000000000000000000000000000000000000000000000000000000","status":"0x0"}}\n'
+2022-03-17 11:24:45,515 DEBUG - ChannelRecvThread channelHandler.ssock.recv begin.
+2022-03-17 11:24:45,516 DEBUG - onResponse, emitter: getResult_b'caf6d3f8a5a111ec93cfe4a8dffef43a'_18
+2022-03-17 11:24:45,516 DEBUG - response from server , seq: b'caf6d3f8a5a111ec93cfe4a8dffef43a', type:18
+2022-03-17 11:24:45,517 DEBUG - channelHandler.ssock.recv len:0
+2022-03-17 11:24:45,517 INFO - disconnect for read/write error, host: 192.168.137.240, port: 20200
+2022-03-17 11:24:45,518 DEBUG - channelHandler:thread finished ,keepWorking = False
+2022-03-17 11:24:45,527 DEBUG - ChannelRecvThread:thread finished ,keepWorking = False
+2022-03-17 11:24:45,714 DEBUG - channelSendThread:thread finished ,keepWorking = False
+2022-03-17 11:24:45,721 DEBUG - Thread-4:thread finished ,keepWorking = False
