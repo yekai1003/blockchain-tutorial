@@ -163,6 +163,11 @@ conf/application.yml
 nodePath: fisco/agencyA/node/node_127.0.0.1_30300
 ```
 
+启动
+```sh
+bash start.sh
+```
+
 检查5002端口是否启动
 
 ```sh
