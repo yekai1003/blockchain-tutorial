@@ -177,7 +177,10 @@ $ netstat -anp|grep 5002
 tcp6       0      0 :::5002                 :::*                    LISTEN      5452/java  
 ```
 
-此时，可以通过地址：http://192.168.137.240:5002/WeBASE-Front/#/home访问区块链浏览器情况。
+此时，可以通过地址：
+http://192.168.137.240:5002/WeBASE-Front/#/home
+
+访问区块链浏览器情况。
 
 看到如下效果，就代表WeBASE-Front安装成功了。
 
