@@ -1,0 +1,20 @@
+[Network]
+#type rpc or channel
+Type="channel"
+CAFile="sdk/ca.crt"
+Cert="sdk/sdk.crt"
+Key="sdk/sdk.key"
+[[Network.Connection]]
+NodeURL="192.168.137.134:20200"
+GroupID=1
+# [[Network.Connection]]
+# NodeURL="192.168.137.134:20200"
+# GroupID=2
+
+[Account]
+# only support PEM format for now
+KeyFile=".key/yekai.pem"
+
+[Chain]
+ChainID=1
+SMCrypto=false
