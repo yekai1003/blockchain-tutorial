@@ -18,12 +18,12 @@ def login(name, password):
 
 # function issue(string calldata issuer, string calldata passwd, string calldata desc, uint256 bonus)
 def issue(issuer, password, desc, bonus):
-    data = client.call(taskcontract, taskabi, "issue", [issuer, password, desc, bonus])
+    data = client.sendRawTransactionGetReceipt(taskcontract, taskabi, "issue", [issuer, password, desc, bonus])
     print(data)
 
 # 赠送积分
 def mint(to, amount):
-    data = client.call(taskcontract, taskabi, "mint", [to, amount])
+    data = client.sendRawTransactionGetReceipt(taskcontract, taskabi, "mint", [to, amount])
     print(data)
 
 # 查询余额
@@ -33,19 +33,29 @@ def balanceOf(who):
 
 # 接受任务
 def take(worker, passwd, taskID):
-    data = client.call(taskcontract, taskabi, "take", [worker, passwd, taskID])
+    data = client.sendRawTransactionGetReceipt(taskcontract, taskabi, "take", [worker, passwd, taskID])
     print(data)
 
 # 提交任务
 def commit(worker, passwd, taskID):
-    data = client.call(taskcontract, taskabi, "commit", [worker, passwd, taskID])
+    data = client.sendRawTransactionGetReceipt(taskcontract, taskabi, "commit", [worker, passwd, taskID])
     print(data)
 
 # 确认任务
 def confirm(worker, passwd, taskID, comment, status):
-    data = client.call(taskcontract, taskabi, "confirm", [worker, passwd, taskID, comment, status])
+    data = client.sendRawTransactionGetReceipt(taskcontract, taskabi, "confirm", [worker, passwd, taskID, comment, status])
     print(data)
 
+def update(caller, passwd, taskID, status, comment=None):
+    if status == 1 :
+        take(caller, psswd, taskID)
+    elif status == 2 :
+        commit(caller, passwd, taskID)
+    elif status >= 3  :
+        if status != 3 :
+            status = 1
+        confirm(caller, passwd, taskID, comment, status)
+
 # 查询任务信息
-def queryAll():
-    # 需要依次调用：qryAllIssuers、qryAllWorkers、qryAllDesc、qryAllComments、qryAllBonus、qryAllStatus
+# def queryAll():
+#    # 需要依次调用：qryAllIssuers、qryAllWorkers、qryAllDesc、qryAllComments、qryAllBonus、qryAllStatus
