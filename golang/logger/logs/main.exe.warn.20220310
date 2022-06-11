@@ -1,0 +1,11 @@
+{"level":"warning","msg":"do sth warn not ok?","time":"2022-03-10 09:54:13"}
+{"level":"warning","msg":"do sth warn not ok?","time":"2022-03-10 09:56:17"}
+time="2022-03-10T09:56:17+08:00" level=warning msg="do sth warn not ok?"
+{"level":"panic","msg":"init over","time":"2022-03-10 09:56:17"}
+time="2022-03-10T09:56:17+08:00" level=panic msg="init over"
+{"level":"warning","msg":"do sth warn not ok?","time":"2022-03-10 16:12:58"}
+time="2022-03-10T16:12:58+08:00" level=warning msg="do sth warn not ok?"
+{"level":"panic","msg":"init over","time":"2022-03-10 16:13:01"}
+time="2022-03-10T16:13:01+08:00" level=panic msg="init over"
+{"level":"warning","msg":"do sth warn not ok?","time":"2022-03-10 16:13:23"}
+time="2022-03-10T16:13:23+08:00" level=warning msg="do sth warn not ok?"
