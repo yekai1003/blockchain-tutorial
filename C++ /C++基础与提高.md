@@ -6,6 +6,8 @@
 
 1982 年，美国 AT&T 公司贝尔实验室的 Bjarne Stroustrup 博士在 c 语言的基础上引 入并扩充了面向对象的概念，发明了一种新的程序语言。为了表达该语言与c语言的渊 源关系，它被命名为C++。而 Bjarne Stroustrup(本贾尼·斯特劳斯特卢普)博士被尊称为C++语言之父。
 
+![img](assets/author.jpg)
+
 ![img](https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1595219141072&di=c5fb3ff86c6625334408d494cfcbedb2&imgtype=0&src=http%3A%2F%2F2a.zol-img.com.cn%2Fproduct%2F148%2F220%2FceIuUC5favGuI.jpg)
 
 ### 2. C++的产生与发展
