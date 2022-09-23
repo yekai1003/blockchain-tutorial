@@ -27,6 +27,10 @@ address 0x1 {
             let star = borrow_global<FootBallStar>(owner);
             (star.name, star.value)
         }
- 
+        
+        public fun setPrice(owner: address, price: u64) acquires FootBallStar {
+            let star = borrow_global_mut<FootBallStar>(owner);
+            star.value = price;
+        }
     } 
 }
