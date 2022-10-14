@@ -65,12 +65,12 @@ Aptos is now set up for account e718f50a9e4e6e77252a4b9a851aed2fd8bfa63f69a282cd
 }
 ```
 
-初始化
+申请水龙头
 
 ```sh
 
 PROFILE=local
-aptos init --profile $PROFILE --rest-url http://localhost:8080 --faucet-url http://localhost:8081
+aptos account fund-with-faucet --account $PROFILE
 ```
 
 
