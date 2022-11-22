@@ -108,8 +108,73 @@ ps -ef|grep fisco-bcos
 ```
 
 
+## 3. console安装和使用
 
-## 3. WeBASE-Front安装
+先下载文件。
+
+```sh
+# 下载文件
+wget https://github.com/FISCO-BCOS/console/releases/download/v2.9.2/console-0.6.tar.gz
+# 解压缩文件
+tar zxvf console-0.6.tar.gz
+```
+
+复制配置文件。
+
+```sh
+cp console/conf/config-example.toml console/conf/config.toml
+```
+
+修改配置文件内容，主要是去掉3行的注释，修改后结果如下。
+
+```toml
+caCert = "conf/ca.crt"                    # CA cert file path
+                                            # If connect to the GM node, default CA cert path is ${certPath}/gm/gmca.crt
+
+sslCert = "conf/sdk.crt"                  # SSL cert file path
+                                            # If connect to the GM node, the default SDK cert path is ${certPath}/gm/gmsdk.crt
+
+sslKey = "conf/sdk.key"                   # SSL key file path
+```
+
+这3行注释代表需要3个文件，将节点目录sdk中的密钥文件拷贝至console/conf目录即可。
+
+```sh
+cp nodes/127.0.0.1/sdk/* console/conf/
+```
+
+之后就可以启动console了。
+
+```sh
+cd console
+bash start.sh
+```
+
+看到如下效果，console就顺利启动了。
+
+```
+$ bash start.sh 
+=============================================================================================
+Welcome to FISCO BCOS console(2.9.2)!
+Type 'help' or 'h' for help. Type 'quit' or 'q' to quit console.
+ ________ ______  ______   ______   ______       _______   ______   ______   ______  
+|        |      \/      \ /      \ /      \     |       \ /      \ /      \ /      \ 
+| $$$$$$$$\$$$$$|  $$$$$$|  $$$$$$|  $$$$$$\    | $$$$$$$|  $$$$$$|  $$$$$$|  $$$$$$\
+| $$__     | $$ | $$___\$| $$   \$| $$  | $$    | $$__/ $| $$   \$| $$  | $| $$___\$$
+| $$  \    | $$  \$$    \| $$     | $$  | $$    | $$    $| $$     | $$  | $$\$$    \ 
+| $$$$$    | $$  _\$$$$$$| $$   __| $$  | $$    | $$$$$$$| $$   __| $$  | $$_\$$$$$$\
+| $$      _| $$_|  \__| $| $$__/  | $$__/ $$    | $$__/ $| $$__/  | $$__/ $|  \__| $$
+| $$     |   $$ \\$$    $$\$$    $$\$$    $$    | $$    $$\$$    $$\$$    $$\$$    $$
+ \$$      \$$$$$$ \$$$$$$  \$$$$$$  \$$$$$$      \$$$$$$$  \$$$$$$  \$$$$$$  \$$$$$$
+
+=============================================================================================
+[group:1]>
+```
+如果想要使用console，推荐查看官方给出的教程。当然，也可以参考本人制作的一些视频教程内容。
+[console使用说明](https://fisco-bcos-documentation.readthedocs.io/zh_CN/latest/docs/console/console.html#grantpermissionmanager)
+
+
+## 4. WeBASE-Front安装
 
 参考教程：
 
