@@ -284,7 +284,17 @@ peer lifecycle chaincode commit -o localhost:7050 --ordererTLSHostnameOverride o
 
 ### 2.3 测试token-erc-20
 
+由于版本更新，链码中增加了Initialize函数，因此需要先调用，否则可能会报错。
+函数原型为：
+```go
+func (s *SmartContract) Initialize(ctx contractapi.TransactionContextInterface, name string, symbol string, decimals string)
+```
+需要传递名称、符号以及精度3个参数，精度代表小数点的位数，应填写1个数字。
 
+
+```sh
+peer chaincode invoke -o localhost:7050 --ordererTLSHostnameOverride orderer.example.com --tls --cafile ${PWD}/organizations/ordererOrganizations/example.com/orderers/orderer.example.com/msp/tlscacerts/tlsca.example.com-cert.pem -C ykchannel -n erc20 --peerAddresses localhost:7051 --tlsRootCertFiles ${PWD}/organizations/peerOrganizations/org1.example.com/peers/peer0.org1.example.com/tls/ca.crt --peerAddresses localhost:9051 --tlsRootCertFiles ${PWD}/organizations/peerOrganizations/org2.example.com/peers/peer0.org2.example.com/tls/ca.crt -c '{"function":"Initialize","Args":["YKToken","YKT","6"]}'
+```
 
 mint测试(org1可以执行)
 
