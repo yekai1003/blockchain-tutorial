@@ -250,3 +250,13 @@ http://192.168.137.240:5002/WeBASE-Front/#/home
 看到如下效果，就代表WeBASE-Front安装成功了。
 
 ![image-20220315160629561](images/fisco-webase-front.png)
+
+## 5. SDK使用
+
+go-sdk的使用：
+
+[use-go-sdk](use-go-sdk.md)
+
+python-sdk的使用：
+
+[use-python-sdk](usage-python-sdk.md)
